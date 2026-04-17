@@ -5,9 +5,11 @@
   "type": "module",
   "description": "Landing + prezentacja meetup — niezależny od monorepo (docelowo osobne repo).",
   "scripts": {
-    "build": "tsx scripts/build.ts",
-    "test": "vitest run",
-    "preview": "npx --yes serve dist -p 8788"
+    "build": "node --import tsx scripts/build.ts",
+    "test": "node node_modules/vitest/vitest.mjs run",
+    "preview": "npx --yes serve dist -p 8788",
+    "pages:dev": "npx --yes wrangler pages dev dist",
+    "pages:deploy": "npm run build && npx --yes wrangler pages deploy dist"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
