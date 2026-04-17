@@ -1,0 +1,322 @@
+{
+  "meta": {
+    "siteTitle": "Programistok — Fabryka własnych SaaS",
+    "meetupTitle": "Prezentacja",
+    "talkTeaserHtml": "<h1>Fabryka własnych SaaS</h1>\n<p>Moja działka to od zawsze <strong>utrzymanie aplikacji</strong> — kiedyś głównie „trzymaj światło zielone”. Teraz mogę tę rolę rozwinąć w stronę pełnego cyklu: od pomysłu, przez kod, infra, po publikację.</p>\n<p>Nie muszę być najlepszy w kodowaniu, produkcie, security ani QA. Wystarczająco dobry — w każdym z tych obszarów — jest <strong>w zasięgu</strong>, jeśli świadomie budujesz proces i narzędzia. Dlatego zamiast narzekać, że „znowu coś się nie udało”, biorę rękawicę: <strong>robię wszystko sam</strong>. A co.</p>\n<p>To będzie <strong>memory dump przy mikrofonie</strong>: co podczas tego rozciągania kompetencji wyszło, a co nie. Spoiler: dużo nie wyszło — ale <strong>infra jest w miarę spoko</strong> 🙂</p>\n<hr>\n",
+    "presenterBioHtml": "<p>Od <strong>8 lat</strong> w <strong>Instapage</strong>, obecnie jako <strong>Principal DevOps</strong>: obserwuję jak robi się produkt „na prawdziwej” skali i co się psuje, zanim ktoś to zauważy w slajdach.</p>\n<p>Równolegle buduję <strong>onREC</strong> i robię <strong>transmisje na żywo</strong> — tam liczy się nie tylko pipeline, ale też moment, kiedy „coś musi działać już”.</p>\n<p>Kiedyś trenowałem <strong>karate</strong> — nauczyło mnie to porządku, powtarzalności i szacunku do podstaw zanim idzie się w finezję.</p>\n<p>Dziś dużo energii biorę z <strong>teatru improwizowanego</strong>: akceptacja oferty, praca w zespole pod presją, szybkie iteracje — i humor, kiedy plan idzie w krzaki. To wszystko ma znaczenie w kontekście tej prezentacji.</p>\n"
+  },
+  "steps": [
+    {
+      "order": 1,
+      "slug": "prd",
+      "title": "1. Pomysł na aplikację i PRD",
+      "slides": [
+        {
+          "id": "01-prd/01a-plan-kierunek",
+          "stepOrder": 1,
+          "stepSlug": "prd",
+          "slideOrder": "01a",
+          "title": "Plan — od zajawki do pierwszego produktu",
+          "bodyHtml": "<h1>Skąd to się bierze</h1>\n<div class=\"rules-grid\" aria-label=\"Motywacja i kierunek\">\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">Pasja i środowisko</h3>\n    <p class=\"rule-card__text\">Swoje zajawki, grupy, w których jesteśmy na co dzień.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">Problem</h3>\n    <p class=\"rule-card__text\">Widzimy bolączki procesu i, jak na inżynierów przystało, wymyślamy, jak to usprawnić.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">Stary świat</h3>\n    <p class=\"rule-card__text\">Długo odpowiadaliśmy tylko za <strong>jeden wycinek</strong> całego łańcucha.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">Nowy zakres</h3>\n    <p class=\"rule-card__text\">Łatwiej <strong>poszerzyć pole działania</strong>: proces znamy end-to-end; brakującą „rękę” do etapów dopełnia <strong>AI</strong>.</p>\n  </article>\n\n  <article class=\"rule-card rule-card--full\">\n    <h3 class=\"rule-card__title\">Framework pracy</h3>\n    <p class=\"rule-card__text\">Układam sposób pracy, żeby <strong>szybko dowozić pomysły</strong> i sprawdzać, czy miałem rację.</p>\n  </article>\n\n  <article class=\"rule-card rule-card--full\">\n    <h3 class=\"rule-card__title\">Pierwszy strzał</h3>\n    <p class=\"rule-card__text\"><strong>Zawody karate</strong> — onTatami.</p>\n  </article>\n\n  <article class=\"rule-card rule-card--full rule-card--warn\">\n    <h3 class=\"rule-card__title\">Greenfield</h3>\n    <p class=\"rule-card__text\">Od zera, własny projekt — to po prostu <strong>dobra zabawa</strong>. Natomiast <strong>nie polecam</strong> takiego podejścia w typowych, aktualnych projektach: zwłaszcza <strong>dużych</strong> i w środowisku <strong>niedostosowanym do pracy z AI</strong> (procesy, kod, narzędzia). Tam koszt i ryzyko rosną szybciej niż korzyść z „eksperymentu dla przyjemności”.</p>\n  </article>\n\n</div>",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "01-prd/01b-zasady-vs-instapage",
+          "stepOrder": 1,
+          "stepSlug": "prd",
+          "slideOrder": "01b",
+          "title": "Trochę inne zasady niż w Instapage...",
+          "bodyHtml": "<h1>Trochę inne zasady niż w Instapage...</h1>\n<ol>\n<li><strong>Ma być tanio!</strong></li>\n<li><strong>Ma być solidnie i stabilnie.</strong></li>\n<li><strong>Ma się skalować.</strong></li>\n<li><strong>Nie robić samemu rzeczy trudnych.</strong></li>\n<li><strong>Nie dotykać rozliczeń!</strong></li>\n<li><strong>Zupełnie inna definicja sukcesu</strong> — projekt nie musi być wielki i drogi.</li>\n</ol>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "01-prd/01c-idea-scope",
+          "stepOrder": 1,
+          "stepSlug": "prd",
+          "slideOrder": "01c",
+          "title": "Ludzki szkic produktu — zanim w ogóle myślisz o PRD",
+          "bodyHtml": "<h1>Zanim PRD — trzy bloki, które pisze człowiek</h1>\n<p>Z AI da się przyspieszyć doprecyzowanie i dokument — ale <strong>punkt wyjścia</strong> i tak zwykle zostaje u człowieka: krótki, sensowny opis <em>po co</em> i <em>co minimalnie</em>.</p>\n<ul class=\"slide-pillars\">\n  <li>\n    <span class=\"slide-pillar__n\">1</span>\n    <div class=\"slide-pillar__body\">\n      <strong>Identyfikacja problemu</strong>\n      <span class=\"slide-pillar__sub\">Kto cierpi, kiedy, ile to kosztuje — bez buzzwordów.</span>\n    </div>\n  </li>\n  <li>\n    <span class=\"slide-pillar__n\">2</span>\n    <div class=\"slide-pillar__body\">\n      <strong>Funkcjonalności minimalne</strong>\n      <span class=\"slide-pillar__sub\">Co już realnie łagodzi ból lub rozwiązuje rdzeń problemu (nie \"pełna wizja 2029\").</span>\n    </div>\n  </li>\n  <li>\n    <span class=\"slide-pillar__n\">3</span>\n    <div class=\"slide-pillar__body\">\n      <strong>Ścieżki i aktorzy</strong>\n      <span class=\"slide-pillar__sub\">Kto wchodzi do systemu, po co, jaka jest jego \"happy path\" vs chaos.</span>\n    </div>\n  </li>\n</ul>\n\n<p>Ten slajd to <strong>szablon myślenia</strong>. Poniżej — <strong>przykład</strong>, jak takie trzy bloki wyglądają wypełnione dla konkretnego produktu (&quot;case study&quot; w tym samym interfejsie).</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": {
+            "label": "onTatami",
+            "title": "onTatami — przykład wypełnienia tego szkieletu",
+            "bodyHtml": "<h2>1. Identyfikacja problemu</h2>\n<p><strong>Chaos operacyjny w dniu zawodów</strong> — organizator, sekretariat i ekipa na macie żonglują arkuszami, komunikatorem i „obrazem z głowy”. Brak <strong>jednego spójnego miejsca prawdy</strong> dla zgłoszeń, list startowych, przebiegu walk, wyników i tego, co widzi publiczność. Ryzyko: opóźnienia, pomyłki, frustracja zawodników i widzów.</p>\n<hr>\n<h2>2. Funkcjonalności minimalne (MVP)</h2>\n<p>Wystarczy, żeby <strong>realnie złagodzić dzień zawodów</strong>, nie żeby od razu „zastąpić federację”:</p>\n<ul>\n<li><strong>Konfiguracja wydarzenia</strong> (maty, kategorie, limity, tryb roboczy vs live).</li>\n<li><strong>Rejestracje / zgłoszenia</strong> — ręcznie, z rosteru klubu, sensowne walidacje.</li>\n<li><strong>Weryfikacja i drabinka</strong> (single elimination + sensowne rozstawienia).</li>\n<li><strong>Konsola sędziowska + real-time</strong> — to, co dzieje się na macie i na widokach publicznych, jest <strong>zsynchronizowane</strong>.</li>\n<li><strong>Role (RBAC)</strong> — kto może zmieniać stan, kto tylko czyta.</li>\n<li><strong>Prosty przepłył komercyjny / limity</strong> (np. draft → opublikowane), żeby MVP dało się utrzymać.</li>\n</ul>\n<hr>\n<h2>3. Ścieżki i aktorzy</h2>\n<ul>\n<li><strong>Organizator</strong> — tworzy event, ustala zasady, publikuje, pilnuje finansów i krytycznych ustawień.</li>\n<li><strong>Klub</strong> — zgłasza zawodników, widzi status płatności / akceptacji w swoim panelu.</li>\n<li><strong>Sekretariat / weryfikacja</strong> — check-in, kategorie, korekty przed startem list.</li>\n<li><strong>Operator maty</strong> — konsola: timer, wynik, kolejka; <strong>jedno źródło prawdy</strong> dla „maty X”.</li>\n<li><strong>Widz / publiczny podgląd</strong> — czytelny widok bez „wewnętrznych narzędzi”.</li>\n</ul>\n<p>To jest <strong>przykład</strong> tego, jak ludzki szkic (3 bloki) mapuje się na realny projekt — tutaj <strong>onTatami</strong> — w tej samej warstwie UI co slajd.</p>\n"
+          }
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "slug": "stack",
+      "title": "2. Stack technologiczny (onTatami)",
+      "slides": [
+        {
+          "id": "02-stack/02a-backend-infrastructure",
+          "stepOrder": 2,
+          "stepSlug": "stack",
+          "slideOrder": "02a",
+          "title": "Infrastruktura — Cloudflare (propozycja)",
+          "bodyHtml": "<h1>Dlaczego Cloudflare na start</h1>\n<p><strong>Propozycja:</strong> całość &quot;edge&#39;owa&quot; na <strong>Cloudflare</strong> — od hostingu po magazyn plików. <strong>Największa zaleta:</strong> <strong>hostujesz dużą część stacku w modelu darmowym lub bardzo tanim</strong>, a na MVP dostajesz <strong>podstawowe observability</strong>, które zwykle <strong>wystarczają</strong>.</p>\n<h2>Rdzeń platformy</h2>\n<div class=\"cf-infra-grid\" aria-label=\"Komponenty infrastruktury Cloudflare\">\n  <article class=\"cf-infra-card\">\n    <div class=\"cf-infra-card__icon\" aria-hidden=\"true\">\n      <svg class=\"cf-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 2L3 14h9l-1 8 10-12h-9l1-8z\"/></svg>\n    </div>\n    <div class=\"cf-infra-card__body\">\n      <h3 class=\"cf-infra-card__title\">Cloudflare Workers</h3>\n      <p class=\"cf-infra-card__text\"><strong>Runtime</strong> — serverless na edge, bez serwerów do pilnowania.</p>\n    </div>\n  </article>\n  <article class=\"cf-infra-card\">\n    <div class=\"cf-infra-card__icon\" aria-hidden=\"true\">\n      <svg class=\"cf-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5\"/><path d=\"M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6\"/></svg>\n    </div>\n    <div class=\"cf-infra-card__body\">\n      <h3 class=\"cf-infra-card__title\">D1</h3>\n      <p class=\"cf-infra-card__text\"><strong>Baza główna</strong> — SQLite zarządzany, migracje, spięcie z Workerami. W razie potrzeby ścieżka na **Postgres** (np. Supabase, Cloud SQL) przez migrację / <strong>Hyperdrive</strong> — bez rewrite'u całej aplikacji \"od zera\".</p>\n    </div>\n  </article>\n  <article class=\"cf-infra-card\">\n    <div class=\"cf-infra-card__icon\" aria-hidden=\"true\">\n      <svg class=\"cf-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z\"/><path d=\"M3.27 6.96L12 12.01l8.73-5.05\"/><path d=\"M12 22.08V12\"/></svg>\n    </div>\n    <div class=\"cf-infra-card__body\">\n      <h3 class=\"cf-infra-card__title\">R2</h3>\n      <p class=\"cf-infra-card__text\"><strong>Storage plików</strong> — obiekty w tym samym ekosystemie co reszta stacku.</p>\n    </div>\n  </article>\n</div>\n\n<h2>Observability</h2>\n<div class=\"cf-infra-grid\" aria-label=\"Observability\">\n  <article class=\"cf-infra-card cf-infra-card--soft\">\n    <div class=\"cf-infra-card__icon cf-infra-card__icon--sm\" aria-hidden=\"true\">\n      <svg class=\"cf-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M3 3v18h18\"/><path d=\"M18 17V9\"/><path d=\"M13 17V5\"/><path d=\"M8 17v-3\"/></svg>\n    </div>\n    <div class=\"cf-infra-card__body\">\n      <h3 class=\"cf-infra-card__title\">CF — metryki i logi</h3>\n      <p class=\"cf-infra-card__text\"><strong>Podstawowe observability</strong> na MVP — bez pełnego APM od pierwszego dnia.</p>\n    </div>\n  </article>\n  <article class=\"cf-infra-card cf-infra-card--soft cf-infra-card--exploring\" aria-label=\"Opcja w rozważaniu\">\n    <div class=\"cf-infra-card__icon cf-infra-card__icon--sm\" aria-hidden=\"true\">\n      <svg class=\"cf-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 9h18\"/><path d=\"M9 21V9\"/></svg>\n    </div>\n    <div class=\"cf-infra-card__body\">\n      <h3 class=\"cf-infra-card__title\">Grafana stack <span class=\"cf-infra-card__badge\">opcja</span></h3>\n      <p class=\"cf-infra-card__text\"><strong>Dashboardy + logi/metryki</strong> (np. Loki, Prometheus/Mimir — zależnie od stacku). Rozważam i będę <strong>testował</strong> obok domyślnego observability z CF.</p>\n    </div>\n  </article>\n</div>\n\n<h2>AI</h2>\n<div class=\"cf-infra-grid\" aria-label=\"AI i LLM\">\n  <article class=\"cf-infra-card cf-infra-card--soft\">\n    <div class=\"cf-infra-card__icon cf-infra-card__icon--sm\" aria-hidden=\"true\">\n      <svg class=\"cf-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><circle cx=\"6\" cy=\"12\" r=\"3\"/><circle cx=\"18\" cy=\"12\" r=\"3\"/><path d=\"M9 12h6\"/><path d=\"M15 9l3 3-3 3\"/></svg>\n    </div>\n    <div class=\"cf-infra-card__body\">\n      <h3 class=\"cf-infra-card__title\">OpenRouter</h3>\n      <p class=\"cf-infra-card__text\"><strong>Jeden punkt wejścia</strong> do wielu modeli. Ewentualnie zamiast lub obok: <strong>AI Gateway</strong> (Cloudflare) — też usługa proxy pod LLM.</p>\n    </div>\n  </article>\n  <article class=\"cf-infra-card cf-infra-card--soft\">\n    <div class=\"cf-infra-card__icon cf-infra-card__icon--sm\" aria-hidden=\"true\">\n      <svg class=\"cf-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"/></svg>\n    </div>\n    <div class=\"cf-infra-card__body\">\n      <h3 class=\"cf-infra-card__title\">Langfuse</h3>\n      <p class=\"cf-infra-card__text\"><strong>Rekomendacja pod LLM</strong> — ślady, koszty, eksperymenty; <strong>free tier</strong> zwykle na MVP wystarczy.</p>\n    </div>\n  </article>\n</div>\n\n<h2>Autoryzacja i płatności</h2>\n<div class=\"cf-infra-grid\" aria-label=\"Autoryzacja i płatności\">\n  <article class=\"cf-infra-card cf-infra-card--soft\">\n    <div class=\"cf-infra-card__icon cf-infra-card__icon--sm\" aria-hidden=\"true\">\n      <svg class=\"cf-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3l7 4v5c0 4.8-2.9 7.8-7 9-4.1-1.2-7-4.2-7-9V7l7-4z\"/><path d=\"M9.5 12l1.7 1.7L14.8 10\"/></svg>\n    </div>\n    <div class=\"cf-infra-card__body\">\n      <h3 class=\"cf-infra-card__title\">Clerk</h3>\n      <p class=\"cf-infra-card__text\"><strong>Auth + Organizations + RBAC</strong> — gotowe logowanie, role i kontrola dostępu bez budowania auth od zera.</p>\n    </div>\n  </article>\n  <article class=\"cf-infra-card cf-infra-card--soft\">\n    <div class=\"cf-infra-card__icon cf-infra-card__icon--sm\" aria-hidden=\"true\">\n      <svg class=\"cf-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"5\" width=\"19\" height=\"14\" rx=\"2.2\"/><path d=\"M2.5 10.2h19\"/><path d=\"M7.5 14.2h3.5\"/></svg>\n    </div>\n    <div class=\"cf-infra-card__body\">\n      <h3 class=\"cf-infra-card__title\">Creem</h3>\n      <p class=\"cf-infra-card__text\"><strong>Merchant of Record</strong> — płatności globalne, podatki i compliance po stronie platformy. Dzięki temu nie dotykam rozliczeń operacyjnie.</p>\n    </div>\n  </article>\n</div>\n\n<h2>Podsumowanie</h2>\n<p><strong>Workers + D1 + R2</strong> w jednym ekosystemie; <strong>Hyperdrive</strong> tylko wtedy, gdy realnie potrzebujesz <strong>Postgres</strong> obok (lub zamiast) D1.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "02-stack/02b-other-tech",
+          "stepOrder": 2,
+          "stepSlug": "stack",
+          "slideOrder": "02b",
+          "title": "Inne technologie w stacku",
+          "bodyHtml": "<h1>Inne technologie w stacku</h1>\n<div class=\"tech-grid\" aria-label=\"Inne technologie projektu\">\n  <article class=\"tech-card tech-card--warn\">\n    <h3 class=\"tech-card__title\">Email</h3>\n    <p class=\"tech-card__text\">Resend + React Email</p>\n  </article>\n\n  <article class=\"tech-card\">\n    <h3 class=\"tech-card__title\">Monitoring</h3>\n    <p class=\"tech-card__text\">Cloudflare Analytics + Sentry</p>\n  </article>\n\n  <article class=\"tech-card\">\n    <h3 class=\"tech-card__title\">Walidacja i jakość</h3>\n    <p class=\"tech-card__text\">Zod, TypeScript strict, Prettier + ESLint</p>\n  </article>\n\n  <article class=\"tech-card\">\n    <h3 class=\"tech-card__title\">Testy</h3>\n    <p class=\"tech-card__text\">Playwright (MVP)</p>\n  </article>\n\n  <article class=\"tech-card tech-card--full\">\n    <h3 class=\"tech-card__title\">Utility</h3>\n    <p class=\"tech-card__text\"><code>date-fns</code> (locale <code>pl</code>), <code>crypto.randomUUID()</code>, <code>PapaParse</code>, <code>qrcode</code>, <code>slugify</code></p>\n  </article>\n</div>",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "slug": "rules-skills",
+      "title": "3. Rules and Skills",
+      "slides": [
+        {
+          "id": "03-rules-skills/03a-cursor-rules",
+          "stepOrder": 3,
+          "stepSlug": "rules-skills",
+          "slideOrder": "03a",
+          "title": "Rules w onTatami",
+          "bodyHtml": "<h1>Rules w onTatami</h1>\n<div class=\"rules-grid\" aria-label=\"Lista rules projektu\">\n  <article class=\"rule-card rule-card--full\">\n    <h3 class=\"rule-card__title\">.cursorrules</h3>\n    <p class=\"rule-card__text\">Główny kontrakt projektu: stack, zasady jakości, obowiązkowe testy i aktualizacja dokumentów (`PLAN.md`, `RECENT_CHANGES.md`).</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">05 — tools-first-for-hono-and-docs</h3>\n    <p class=\"rule-card__text\">Najpierw źródło prawdy (skills/MCP docs), potem implementacja.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">10 — architektura-i-granulacja</h3>\n    <p class=\"rule-card__text\">Twarde granice warstw i feature-first w małych modułach.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">20 — standardy-kodu</h3>\n    <p class=\"rule-card__text\">Zwięzłość, TS strict, Zod na granicy IO, jawna obsługa błędów.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">25 — hono-type-safety</h3>\n    <p class=\"rule-card__text\">Pełna inferencja Hono end-to-end, bez antywzorców controller-first.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">30 — testowanie</h3>\n    <p class=\"rule-card__text\">Każda zmiana funkcjonalna wymaga testów adekwatnych do ryzyka.</p>\n  </article>\n\n  <article class=\"rule-card rule-card--warn\">\n    <h3 class=\"rule-card__title\">40 — kontekst-sesji</h3>\n    <p class=\"rule-card__text\">Po zadaniu obowiązkowa synchronizacja planu i kontekstu projektu.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">70 — refaktor-proaktywny</h3>\n    <p class=\"rule-card__text\">Duże pliki dzielone na bieżąco zamiast odkładania „big refactor”.</p>\n  </article>\n</div>",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-rules-skills/03b-skills",
+          "stepOrder": 3,
+          "stepSlug": "rules-skills",
+          "slideOrder": "03b",
+          "title": "Wszystkie skills dostępne w projekcie",
+          "bodyHtml": "<h1>Wszystkie skills dostępne w projekcie</h1>\n<h2>Core product / stack</h2>\n<ul>\n<li><code>hono</code>, <code>cloudflare</code>, <code>durable-objects</code>, <code>wrangler</code>, <code>workers-best-practices</code></li>\n<li><code>clerk</code>, <code>clerk-setup</code>, <code>clerk-backend-api</code>, <code>clerk-custom-ui</code>, <code>clerk-nextjs-patterns</code>, <code>clerk-testing</code>, <code>clerk-webhooks</code></li>\n<li><code>vercel-react-best-practices</code>, <code>frontend-design</code></li>\n</ul>\n<h2>AI i platform skills (Cloudflare)</h2>\n<ul>\n<li><code>agents-sdk</code>, <code>building-ai-agent-on-cloudflare</code>, <code>building-mcp-server-on-cloudflare</code>, <code>sandbox-sdk</code>, <code>web-perf</code></li>\n<li><code>cloudflare</code> (druga wersja skilla z paczki Cloudflare plugin)</li>\n</ul>\n<h2>Product / discovery</h2>\n<ul>\n<li><code>business-analyst</code>, <code>prd</code>, <code>find-skills</code></li>\n</ul>\n<h2>Cursor workflow / maintenance</h2>\n<ul>\n<li><code>babysit</code>, <code>create-rule</code>, <code>create-skill</code>, <code>statusline</code>, <code>update-cli-config</code>, <code>update-cursor-settings</code></li>\n</ul>\n<h2>CI, review i operacje repo</h2>\n<ul>\n<li><code>check-compiler-errors</code>, <code>deslop</code>, <code>fix-ci</code>, <code>fix-merge-conflicts</code>, <code>get-pr-comments</code>, <code>loop-on-ci</code>, <code>new-branch-and-pr</code>, <code>review-and-ship</code>, <code>run-smoke-tests</code>, <code>weekly-review</code>, <code>what-did-i-get-done</code></li>\n</ul>\n<p>To jest „toolbox” fabryki: zamiast robić wszystko jednym agentem, dobierasz <strong>właściwy skill do konkretnej roboty</strong>.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "slug": "subagents",
+      "title": "4. Sub-agenci",
+      "slides": [
+        {
+          "id": "04-subagents/04a-agents-md-overview",
+          "stepOrder": 4,
+          "stepSlug": "subagents",
+          "slideOrder": "04a",
+          "title": "Jak działa system agentów w onTatami",
+          "bodyHtml": "<h1>Jak działa system agentów w onTatami</h1>\n<p>Ten model pracy jest opisany w <code>AGENTS.md</code> i opiera się na zasadzie:\n<strong>główny wątek = manager</strong>, a wykonanie idzie przez wyspecjalizowanych agentów.</p>\n<h2>Co jest kluczowe</h2>\n<ul>\n<li>Manager najpierw planuje i deleguje, nie robi wszystkiego sam.</li>\n<li>Praca idzie iteracyjnie: architektura -&gt; implementacja -&gt; testy -&gt; review.</li>\n<li>Każdy agent ma jasny zakres i granice odpowiedzialności.</li>\n<li>Trzymamy granice warstw (<code>apps/web</code>, <code>apps/api</code>, DB, realtime).</li>\n<li>Każde zadanie domykamy testami i synchronizacją dokumentów (<code>PLAN.md</code>, <code>RECENT_CHANGES.md</code>, <code>ai/CONTEXT.md</code>).</li>\n</ul>\n<h2>Domyślny przepływ</h2>\n<ol>\n<li><code>architect</code></li>\n<li>specjalista domenowy (<code>frontend-specialist</code> / <code>api-specialist</code> / <code>database-specialist</code> / <code>engineer</code>)</li>\n<li><code>test-specialist</code></li>\n<li><code>reviewer</code></li>\n</ol>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "04-subagents/04b-architect",
+          "stepOrder": 4,
+          "stepSlug": "subagents",
+          "slideOrder": "04b",
+          "title": "Agent: `architect`",
+          "bodyHtml": "<h1>Agent: <code>architect</code></h1>\n<p>Domyślny agent startowy. Układa rozwiązanie tak, żeby było <strong>proste, wdrażalne i testowalne</strong>.</p>\n<h2>Rola</h2>\n<ul>\n<li>Rozbija zadanie na małe kroki.</li>\n<li>Ustala kontrakty danych/API.</li>\n<li>Pilnuje granic warstw i miejsca zmian w repo.</li>\n<li>Deleguje pracę do pozostałych agentów.</li>\n</ul>\n<h2>Efekt dla zespołu</h2>\n<p>Mniej chaosu i mniej konfliktów — najpierw decyzje architektoniczne, potem kod.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "04-subagents/04c-frontend-specialist",
+          "stepOrder": 4,
+          "stepSlug": "subagents",
+          "slideOrder": "04c",
+          "title": "Agent: `frontend-specialist`",
+          "bodyHtml": "<h1>Agent: <code>frontend-specialist</code></h1>\n<p>Specjalista od <code>apps/web</code> (React Router + React 19 + Tailwind/shadcn).</p>\n<h2>Rola</h2>\n<ul>\n<li>Pracuje na trasach, loader/action i komponentach UI.</li>\n<li>Integruje widoki z API i stanami (loading/error/empty).</li>\n<li>Dba o SSR-safe patterns i testy UI.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie rozwiązuje backendowej autoryzacji ani warstwy DB po stronie UI.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "04-subagents/04d-api-specialist",
+          "stepOrder": 4,
+          "stepSlug": "subagents",
+          "slideOrder": "04d",
+          "title": "Agent: `api-specialist`",
+          "bodyHtml": "<h1>Agent: <code>api-specialist</code></h1>\n<p>Specjalista od <code>apps/api</code> (Cloudflare Workers + Hono + Zod).</p>\n<h2>Rola</h2>\n<ul>\n<li>Tworzy i utrzymuje endpointy HTTP.</li>\n<li>Waliduje input/output i pilnuje spójnych błędów.</li>\n<li>Dba o RBAC, security headers, CORS i testy API.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie implementuje UI; migracje DB robi we współpracy z <code>database-specialist</code>.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "04-subagents/04e-database-specialist",
+          "stepOrder": 4,
+          "stepSlug": "subagents",
+          "slideOrder": "04e",
+          "title": "Agent: `database-specialist`",
+          "bodyHtml": "<h1>Agent: <code>database-specialist</code></h1>\n<p>Specjalista od D1/SQLite + Drizzle w <code>apps/api</code>.</p>\n<h2>Rola</h2>\n<ul>\n<li>Projektuje schema i migracje.</li>\n<li>Przegląda zapytania pod poprawność i koszt.</li>\n<li>Pilnuje integralności danych i kompatybilności kontraktów.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie wdraża UI i nie zmienia kontraktów API bez synchronizacji z <code>api-specialist</code>.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "04-subagents/04f-engineer",
+          "stepOrder": 4,
+          "stepSlug": "subagents",
+          "slideOrder": "04f",
+          "title": "Agent: `engineer`",
+          "bodyHtml": "<h1>Agent: <code>engineer</code></h1>\n<p>Agent &quot;dowozowy&quot;: małe, poprawne zmiany produkcyjne domknięte testami.</p>\n<h2>Rola</h2>\n<ul>\n<li>Implementuje kod zgodnie z planem.</li>\n<li>Trzyma standardy TypeScript strict i walidację wejść.</li>\n<li>Dodaje testy regresyjne przy fixach.</li>\n<li>Uruchamia typecheck/testy dla dotkniętych modułów.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie omija testów, review ani zasad bezpieczeństwa.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "04-subagents/04g-test-specialist",
+          "stepOrder": 4,
+          "stepSlug": "subagents",
+          "slideOrder": "04g",
+          "title": "Agent: `test-specialist`",
+          "bodyHtml": "<h1>Agent: <code>test-specialist</code></h1>\n<p>Specjalista od jakości: Vitest + Testing Library + testy Workers/API.</p>\n<h2>Rola</h2>\n<ul>\n<li>Projektuje minimalny, skuteczny zakres testów.</li>\n<li>Tworzy testy do nowych funkcji i napraw.</li>\n<li>Dodaje regresje na przypadki brzegowe.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie zmienia logiki produkcyjnej, jeśli nie jest to konieczne do testowania.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "04-subagents/04h-reviewer",
+          "stepOrder": 4,
+          "stepSlug": "subagents",
+          "slideOrder": "04h",
+          "title": "Agent: `reviewer`",
+          "bodyHtml": "<h1>Agent: <code>reviewer</code></h1>\n<p>Końcowy filtr jakości: poprawność, bezpieczeństwo i ryzyko regresji.</p>\n<h2>Rola</h2>\n<ul>\n<li>Wykrywa bugi, luki RBAC i niespójności walidacji.</li>\n<li>Sprawdza zgodność z wymaganiami i granicami warstw.</li>\n<li>Ocenia, czy testy pokrywają ryzykowne miejsca.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie blokuje zmian przez kosmetykę i nie przepisuje kodu &quot;dla stylu&quot;.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "slug": "cicd",
+      "title": "5. CI/CD i supply chain",
+      "slides": [
+        {
+          "id": "05-cicd/05a-github-cloudflare",
+          "stepOrder": 5,
+          "stepSlug": "cicd",
+          "slideOrder": "05a",
+          "title": "GitHub + Cloudflare",
+          "bodyHtml": "<h1>GitHub + Cloudflare</h1>\n<ul>\n<li><strong>Repo</strong> na GitHubie jako source of truth.</li>\n<li><strong>Cloudflare Pages</strong> (frontend) i/lub <strong>Workers</strong> (API) podpięte pod pipeline z GitHub Actions lub natywne integracje CF.</li>\n<li><strong>Preview deployments</strong> z PR — szybka pętla feedbacku („czy to w ogóle działa na edge?”).</li>\n</ul>\n<h2>Dla solo-deva</h2>\n<p>To jest Twój <strong>„release train”</strong>: jeśli main jest zielony i artefakt się buduje, masz psychologiczne pozwolenie na merge.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "05-cicd/05b-dependabot-socket",
+          "stepOrder": 5,
+          "stepSlug": "cicd",
+          "slideOrder": "05b",
+          "title": "Dependabot + Socket (security)",
+          "bodyHtml": "<h1>Dependabot + Socket (security)</h1>\n<ul>\n<li><strong>Dependabot</strong> — rutynowe PR-y z aktualizacjami zależności; mniejsza powierzchnia „zapomnianych” CVE.</li>\n<li><strong>Socket</strong> — analiza ryzyk w package ecosystem (np. podejrzane skrypty post-install, supply-chain surprises).</li>\n</ul>\n<h2>Co jeszcze robi <code>security.yml</code></h2>\n<ul>\n<li>Odpala się na: <strong>PR</strong>, <strong>push do <code>main</code></strong>, <strong>schedule</strong> (co tydzień), oraz ręcznie (<code>workflow_dispatch</code>).</li>\n<li><strong>Gitleaks</strong>: skan sekretów w working tree (<code>--no-git</code>, redakcja wrażliwych fragmentów).</li>\n<li><strong>Trivy</strong>:<ul>\n<li>na PR: szybki skan <code>apps/</code> pod <strong>misconfig</strong> (HIGH/CRITICAL),</li>\n<li>poza PR: pełny skan repo (<code>vuln + misconfig + secret</code>).</li>\n</ul>\n</li>\n<li><strong>Dependencies (<code>npm audit</code>)</strong> dla <code>apps/web</code> i <code>apps/api</code>:<ul>\n<li>na PR pomijane (żeby nie dublować sygnału z Socket),</li>\n<li>na <code>main/schedule</code>: <code>npm audit --audit-level=high</code>.</li>\n</ul>\n</li>\n<li><strong>OSSF Scorecard</strong> na harmonogramie/manualu (publikacja SARIF do security tab) — w praktyce to lekki, automatyczny zamiennik pod „enterprise audit mindset” (np. SOCA), bo pełnego audytu solowo raczej nie dowieziemy.</li>\n</ul>\n<h2>Czemu to ważne w fabryce</h2>\n<p>Ty nie skanujesz każdego <code>node_modules</code> ręcznie. <strong>Automatyzujesz ostrzeżenia</strong>, a potem <strong>decyzje</strong> podejmujesz świadomie.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "slug": "async-jules",
+      "title": "6. Agenci asynchroniczni — Jules",
+      "slides": [
+        {
+          "id": "06-async-jules/06a-security",
+          "stepOrder": 6,
+          "stepSlug": "async-jules",
+          "slideOrder": "06a",
+          "title": "Jules — super opcja pod security",
+          "bodyHtml": "<h1>Jules — super opcja pod security</h1>\n<p>Agent asynchroniczny może <strong>przemielić repo</strong> w tle: szuka typowych dziur konfiguracyjnych, wycieków sekretów w historii, podejrzanych wzorców w CI.</p>\n<h2>Jak z tego korzystać rozsądnie</h2>\n<ul>\n<li>Nie traktuj wyniku jak audytu Big4 — traktuj jak <strong>triage</strong>: co warto kliknąć w pierwszej kolejności.</li>\n<li><strong>Łącz</strong> z reviewem człowieka przy zmianach w auth, RBAC, boundary z public internetem.</li>\n</ul>\n<h2>Mój spoiler</h2>\n<p>Security „z automatu” ratuje głupie błędy. <strong>Nie ratuje</strong> złych założeń architektury — tu nadal musisz myśleć.</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "06-async-jules/06b-performance",
+          "stepOrder": 6,
+          "stepSlug": "async-jules",
+          "slideOrder": "06b",
+          "title": "Jules — sugestie performance",
+          "bodyHtml": "<h1>Jules — sugestie performance</h1>\n<p>Asynchroniczny agent potrafi zaproponować <strong>profilowanie</strong> i checklistę: bundle size, waterfall zasobów, cache headers, niepotrzebne refetch-e, kosztowne rendery.</p>\n<h2>Co jest wartościowe</h2>\n<ul>\n<li>Lista <strong>„sprawdź najpierw”</strong> — zamiast ogólnego „zoptymalizuj aplikację”.</li>\n<li>Powiązanie z <strong>metrykami</strong> (np. LCP, TBT), jeśli podasz mu kontekst stacku.</li>\n</ul>\n<h2>Uczciwie</h2>\n<p>Część sugestii będzie <strong>generyczna</strong>. Odrzucasz, gdy nie pasuje do realnego profilu ruchu (SSR vs SPA, edge vs origin).</p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "slug": "fails",
+      "title": "7. Faile po drodze",
+      "slides": [
+        {
+          "id": "07-fails/07a-fails",
+          "stepOrder": 7,
+          "stepSlug": "fails",
+          "slideOrder": "07a",
+          "title": "Faile, które mnie nauczyły najwięcej",
+          "bodyHtml": "<h1>Faile, które mnie nauczyły najwięcej</h1>\n<div class=\"fails-grid\" aria-label=\"Lista faili projektu\">\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Antigravity i liczenie tokenów</h3>\n    <p class=\"fail-card__text\">Za dużo wiary, że \"samo się policzy\". Efekt: złe estymacje kosztu i zbyt późna reakcja.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Claude + OpenRouter + modele spoza Anthropic</h3>\n    <p class=\"fail-card__text\">Mieszanie providerów i modeli bez twardych zasad zrobiło niespójne wyniki i trudniejszy debugging.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Jeden wielki `http.api`</h3>\n    <p class=\"fail-card__text\">Przeładowanie kontekstu i nieustające konflikty. Duży plik zabija równoległą pracę agentów.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Cursor nie odpala subagentów mimo definicji w `AGENTS.md`</h3>\n    <p class=\"fail-card__text\">Sama definicja agentów nie gwarantuje działania orkiestracji. Trzeba testować realny execution path, a nie tylko konfigurację.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">UX nieprzygotowany na starcie</h3>\n    <p class=\"fail-card__text\">Nie zaplanowałem UX wcześniej i do dziś spłacam ten dług: bałagan z początku wraca w kolejnych iteracjach.</p>\n  </article>\n\n  <article class=\"fail-card fail-card--positive\">\n    <h3 class=\"fail-card__title\">Testów sam nie weryfikowałem</h3>\n    <p class=\"fail-card__text\">Nigdy tam realnie nie zajrzałem, ale wielokrotnie to właśnie testy powstrzymały release i uratowały mnie przed produkcyjną wtopą.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Drag &amp; drop wygenerował tysiące requestów</h3>\n    <p class=\"fail-card__text\">Przy implementacji drag and drop ruch API wystrzelił i szybko wysycił plan darmowy na Workers. Wniosek: throttling/batching i limity trzeba projektować od razu.</p>\n  </article>\n\n</div>",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "slug": "gaps",
+      "title": "8. Czego jeszcze brakuje",
+      "slides": [
+        {
+          "id": "08-gaps/08a-what-is-missing",
+          "stepOrder": 8,
+          "stepSlug": "gaps",
+          "slideOrder": "08a",
+          "title": "Czego jeszcze brakuje",
+          "bodyHtml": "<h1>Czego jeszcze brakuje</h1>\n<div class=\"gaps-grid\" aria-label=\"Otwarte tematy\">\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">Marketing</h3>\n    <p class=\"gap-card__text\">Muszę jeszcze rozkminić strategię dotarcia: komunikat, kanały i powtarzalny lejek.</p>\n  </article>\n\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">Legal</h3>\n    <p class=\"gap-card__text\">Muszę jeszcze domknąć tematy formalne: regulaminy, odpowiedzialność, dane i compliance.</p>\n  </article>\n\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">Ogarnięcie procesu (rules vs hooki)</h3>\n    <p class=\"gap-card__text\">Chcę przenieść część logiki z rules (np. generowanie kontekstu) do hooków, żeby workflow był bardziej deterministyczny.</p>\n  </article>\n\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">Nowe narzędzia i modele</h3>\n    <p class=\"gap-card__text\">Chcę jeszcze sprawdzić <strong>opencode</strong> oraz użycie modeli typu <strong>Kimi</strong> i <strong>MiniMax</strong>.</p>\n  </article>\n\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">PRD + DeepResearch + konkurencja</h3>\n    <p class=\"gap-card__text\">Chcę przerzucić dokument PRD przez <strong>DeepResearch</strong> i porównać możliwości oraz funkcje konkurencyjnych produktów.</p>\n  </article>\n</div>",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        }
+      ]
+    }
+  ]
+}

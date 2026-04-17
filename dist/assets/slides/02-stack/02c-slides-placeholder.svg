@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="560" viewBox="0 0 800 560" role="img" aria-label="Placeholder">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151a22"/>
+      <stop offset="100%" stop-color="#0c0f14"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" fill="url(#g)"/>
+  <rect x="40" y="40" width="720" height="480" rx="16" fill="none" stroke="#2a3344" stroke-width="2"/>
+  <text x="400" y="270" text-anchor="middle" fill="#5eead4" font-family="IBM Plex Sans, sans-serif" font-size="28" font-weight="600">Obrazek</text>
+  <text x="400" y="310" text-anchor="middle" fill="#8b98ad" font-family="IBM Plex Sans, sans-serif" font-size="15">object-fit: cover · staBy ram</text>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "name": "programistok-meetup",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Landing + prezentacja meetup — niezależny od monorepo (docelowo osobne repo).",
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "test": "vitest run",
+    "preview": "npx --yes serve dist -p 8788"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "esbuild": "^0.24.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.4"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.4"
+  }
+}
