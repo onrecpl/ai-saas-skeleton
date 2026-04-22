@@ -86,14 +86,153 @@
     },
     {
       "order": 3,
-      "slug": "rules-skills",
-      "title": "3. Rules and Skills",
+      "slug": "ui-ux",
+      "title": "3. UI/UX — workflow po infrastrukturze",
       "slides": [
         {
-          "id": "03-rules-skills/03a-cursor-rules",
+          "id": "03-ui-ux/03a-ui-ux-overview",
           "stepOrder": 3,
-          "stepSlug": "rules-skills",
+          "stepSlug": "ui-ux",
           "slideOrder": "03a",
+          "title": "UI/UX po infrastrukturze — dlaczego ten krok",
+          "bodyHtml": "<h1>Krok 3: UI/UX workflow dla Claude Code</h1>\n<p>Po decyzjach o stacku i infrastrukturze warto od razu dołożyć osobny krok o <strong>jakości frontendu</strong>. To moment, w którym:</p>\n<ul>\n<li>unikasz „AI slop” (generyczne layouty i style),</li>\n<li>dobierasz narzędzia do estetyki i typu produktu,</li>\n<li>zabezpieczasz jakość interakcji oraz użyteczność.</li>\n</ul>\n<p>Źródło: analiza filmu <strong>Top 10 Claude Code Frontend Design Skills, Plugins, &amp; CLIs</strong> (Chase AI, 20:07).</p>\n<p>Link do filmu: <a href=\"https://www.youtube.com/watch?v=Q9ty3eopOPs\">https://www.youtube.com/watch?v=Q9ty3eopOPs</a></p>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03b-impeccable",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03b",
+          "title": "Impeccable — anty-slop i konkretne komendy",
+          "bodyHtml": "<h1>Impeccable</h1>\n<p>Skill skupiony na podnoszeniu jakości wizualnej i UX.</p>\n<ul>\n<li><strong>Link (GitHub):</strong> <a href=\"https://github.com/pbakaus/impeccable\">https://github.com/pbakaus/impeccable</a></li>\n<li><strong>Co daje:</strong> zestaw komend do poprawy wyglądu, komunikatów błędów i responsywności.</li>\n<li><strong>Najmocniejsza strona:</strong> definiuje antywzorce („AI slop”), więc model ma jasny sygnał czego unikać.</li>\n<li><strong>Kiedy używać:</strong> na początku prac nad design systemem i przy porządkowaniu istniejącego UI.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03c-skillui",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03c",
+          "title": "SkillUI — reverse engineering designu",
+          "bodyHtml": "<h1>SkillUI</h1>\n<p>Narzędzie do zamiany stylu istniejącej strony na skill dla Claude Code.</p>\n<ul>\n<li><strong>Link (GitHub):</strong> <a href=\"https://github.com/amaancoderx/npxskillui\">https://github.com/amaancoderx/npxskillui</a></li>\n<li><strong>Co daje:</strong> analizuje layout i komponenty wybranego serwisu, a potem tworzy „przepis” na podobny styl.</li>\n<li><strong>Tryb rozszerzony:</strong> może używać Playwright do przechwytywania interakcji i zachowań, nie tylko statycznego HTML.</li>\n<li><strong>Kiedy używać:</strong> gdy chcesz szybko wystartować z estetyką inspirowaną konkretnym produktem.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03d-webgpu-skill",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03d",
+          "title": "WebGPU skill — animacje i efekty premium",
+          "bodyHtml": "<h1>WebGPU skill</h1>\n<p>Skill do budowy bardziej zaawansowanych efektów wizualnych na frontendzie.</p>\n<ul>\n<li><strong>Link (GitHub):</strong> <a href=\"https://github.com/dgreenheck/webgpu-claude-skill\">https://github.com/dgreenheck/webgpu-claude-skill</a></li>\n<li><strong>Co daje:</strong> guidance do shaderów, renderera i efektów opartych o GPU.</li>\n<li><strong>Efekt biznesowy:</strong> strona wygląda bardziej „produktowo premium”, a nie jak typowy szablon.</li>\n<li><strong>Kiedy używać:</strong> selektywnie — głównie hero, sekcje marketingowe i elementy wyróżniające markę.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03e-awesome-design-md",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03e",
+          "title": "awesome-design-md — gotowe style jako prompty",
+          "bodyHtml": "<h1>awesome-design-md</h1>\n<p>Repozytorium gotowych „design markdownów” inspirowanych realnymi stronami.</p>\n<ul>\n<li><strong>Link (GitHub):</strong> <a href=\"https://github.com/VoltAgent/awesome-design-md\">https://github.com/VoltAgent/awesome-design-md</a></li>\n<li><strong>Co daje:</strong> uporządkowane prompty opisujące kolory, typografię, komponenty i zasady wizualne.</li>\n<li><strong>Różnica vs kopiowanie 1:1:</strong> dostajesz system i kierunek, a nie surowy klon.</li>\n<li><strong>Kiedy używać:</strong> gdy chcesz szybciej ustawić język wizualny produktu i zachować spójność.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03f-stitch",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03f",
+          "title": "Stitch (Google) — wizualny start przed kodem",
+          "bodyHtml": "<h1>Stitch</h1>\n<p>Narzędzie do szybkiego tworzenia wariantów UI przed implementacją.</p>\n<ul>\n<li><strong>Link (oficjalny):</strong> <a href=\"https://stitch.withgoogle.com/\">https://stitch.withgoogle.com/</a></li>\n<li><strong>Co daje:</strong> generuje różne wersje layoutu i odpowiadający im design markdown.</li>\n<li><strong>Przewaga:</strong> decyzje estetyczne podejmujesz wizualnie, zamiast iterować „w ciemno” samym kodem.</li>\n<li><strong>Kiedy używać:</strong> na etapie discovery i prototypowania sekcji landingów/aplikacji.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03g-ui-ux-pro-max",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03g",
+          "title": "UI/UX Pro Max — inteligentny design system",
+          "bodyHtml": "<h1>UI/UX Pro Max</h1>\n<p>Rozbudowany skill pod projektowanie dopasowane do branży i celu produktu.</p>\n<ul>\n<li><strong>Link (GitHub):</strong> <a href=\"https://github.com/nextlevelbuilder/ui-ux-pro-max-skill\">https://github.com/nextlevelbuilder/ui-ux-pro-max-skill</a></li>\n<li><strong>Co daje:</strong> dopytuje o kontekst i dobiera decyzje projektowe do typu aplikacji.</li>\n<li><strong>Mocna strona:</strong> reguły domenowe, dzięki którym UI nie wygląda jak generyczny SaaS.</li>\n<li><strong>Kiedy używać:</strong> gdy nie masz jeszcze mocnego kierunku wizualnego i chcesz dobrej bazy.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03h-21st-dev",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03h",
+          "title": "21st.dev — biblioteka komponentów premium",
+          "bodyHtml": "<h1>21st.dev</h1>\n<p>Katalog gotowych komponentów z promptami do bezpośredniego użycia.</p>\n<ul>\n<li><strong>Link (oficjalny):</strong> <a href=\"https://21st.dev/home\">https://21st.dev/home</a></li>\n<li><strong>Co daje:</strong> szybkie podniesienie jakości detali (hero, buttony, karty, mikro-animacje).</li>\n<li><strong>Praktyka:</strong> kopiujesz prompt komponentu, a potem dopasowujesz go do swojego UI.</li>\n<li><strong>Kiedy używać:</strong> gdy chcesz przyspieszyć development bez utraty jakości wizualnej.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03i-taste-skill",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03i",
+          "title": "Taste skill — budowanie „gustu” modelu",
+          "bodyHtml": "<h1>Taste skill</h1>\n<p>Zestaw podejść, które mają przesunąć wynik od „AI slop” w stronę bardziej charakterystycznych interfejsów.</p>\n<ul>\n<li><strong>Link (GitHub):</strong> <a href=\"https://github.com/Leonxlnx/taste-skill\">https://github.com/Leonxlnx/taste-skill</a></li>\n<li><strong>Co daje:</strong> stylizacje i warianty, które pomagają zerwać z powtarzalnymi schematami.</li>\n<li><strong>Najlepsze użycie:</strong> jako warstwa „estetycznej korekty” po zbudowaniu bazowego UI.</li>\n<li><strong>Kiedy używać:</strong> gdy chcesz nadać produktowi bardziej własny charakter wizualny.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03j-google-fonts",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03j",
+          "title": "Google Fonts — typografia bez kosztu",
+          "bodyHtml": "<h1>Google Fonts</h1>\n<p>Prosty, ale krytyczny element jakości UI.</p>\n<ul>\n<li><strong>Link (oficjalny):</strong> <a href=\"https://fonts.google.com/\">https://fonts.google.com/</a></li>\n<li><strong>Co daje:</strong> szeroki wybór darmowych fontów i szybkie testowanie kierunków wizualnych.</li>\n<li><strong>Dlaczego ważne:</strong> typografia mocno wpływa na odbiór produktu i poziom „premium”.</li>\n<li><strong>Kiedy używać:</strong> zawsze na starcie projektu, zamiast zostawiać domyślne fonty z generatora.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        },
+        {
+          "id": "03-ui-ux/03k-playwright-cli",
+          "stepOrder": 3,
+          "stepSlug": "ui-ux",
+          "slideOrder": "03k",
+          "title": "Playwright CLI — testowanie interakcji UI",
+          "bodyHtml": "<h1>Playwright CLI</h1>\n<p>Narzędzie do automatycznej walidacji działania frontendu.</p>\n<ul>\n<li><strong>Link (GitHub):</strong> <a href=\"https://github.com/microsoft/playwright-cli\">https://github.com/microsoft/playwright-cli</a></li>\n<li><strong>Co daje:</strong> testowanie flow użytkownika i interakcji (formularze, nawigacja, edge-case&#39;y).</li>\n<li><strong>Rola w UI/UX:</strong> nie tylko „ładnie wygląda”, ale też działa stabilnie w realnych scenariuszach.</li>\n<li><strong>Kiedy używać:</strong> po każdej większej zmianie frontendowej i przed demo/release.</li>\n</ul>\n",
+          "layout": "no-image",
+          "imageSrc": null,
+          "imageAlt": "",
+          "demoModal": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "slug": "rules-skills",
+      "title": "4. Rules and Skills",
+      "slides": [
+        {
+          "id": "04-rules-skills/04a-cursor-rules",
+          "stepOrder": 4,
+          "stepSlug": "rules-skills",
+          "slideOrder": "04a",
           "title": "Rules w onTatami",
           "bodyHtml": "<h1>Rules w onTatami</h1>\n<div class=\"rules-grid\" aria-label=\"Lista rules projektu\">\n  <article class=\"rule-card rule-card--full\">\n    <h3 class=\"rule-card__title\">.cursorrules</h3>\n    <p class=\"rule-card__text\">Główny kontrakt projektu: stack, zasady jakości, obowiązkowe testy i aktualizacja dokumentów (`PLAN.md`, `RECENT_CHANGES.md`).</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">05 — tools-first-for-hono-and-docs</h3>\n    <p class=\"rule-card__text\">Najpierw źródło prawdy (skills/MCP docs), potem implementacja.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">10 — architektura-i-granulacja</h3>\n    <p class=\"rule-card__text\">Twarde granice warstw i feature-first w małych modułach.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">20 — standardy-kodu</h3>\n    <p class=\"rule-card__text\">Zwięzłość, TS strict, Zod na granicy IO, jawna obsługa błędów.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">25 — hono-type-safety</h3>\n    <p class=\"rule-card__text\">Pełna inferencja Hono end-to-end, bez antywzorców controller-first.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">30 — testowanie</h3>\n    <p class=\"rule-card__text\">Każda zmiana funkcjonalna wymaga testów adekwatnych do ryzyka.</p>\n  </article>\n\n  <article class=\"rule-card rule-card--warn\">\n    <h3 class=\"rule-card__title\">40 — kontekst-sesji</h3>\n    <p class=\"rule-card__text\">Po zadaniu obowiązkowa synchronizacja planu i kontekstu projektu.</p>\n  </article>\n\n  <article class=\"rule-card\">\n    <h3 class=\"rule-card__title\">70 — refaktor-proaktywny</h3>\n    <p class=\"rule-card__text\">Duże pliki dzielone na bieżąco zamiast odkładania „big refactor”.</p>\n  </article>\n</div>",
           "layout": "no-image",
@@ -102,10 +241,10 @@
           "demoModal": null
         },
         {
-          "id": "03-rules-skills/03b-skills",
-          "stepOrder": 3,
+          "id": "04-rules-skills/04b-skills",
+          "stepOrder": 4,
           "stepSlug": "rules-skills",
-          "slideOrder": "03b",
+          "slideOrder": "04b",
           "title": "Wszystkie skills dostępne w projekcie",
           "bodyHtml": "<h1>Wszystkie skills dostępne w projekcie</h1>\n<h2>Core product / stack</h2>\n<ul>\n<li><code>hono</code>, <code>cloudflare</code>, <code>durable-objects</code>, <code>wrangler</code>, <code>workers-best-practices</code></li>\n<li><code>clerk</code>, <code>clerk-setup</code>, <code>clerk-backend-api</code>, <code>clerk-custom-ui</code>, <code>clerk-nextjs-patterns</code>, <code>clerk-testing</code>, <code>clerk-webhooks</code></li>\n<li><code>vercel-react-best-practices</code>, <code>frontend-design</code></li>\n</ul>\n<h2>AI i platform skills (Cloudflare)</h2>\n<ul>\n<li><code>agents-sdk</code>, <code>building-ai-agent-on-cloudflare</code>, <code>building-mcp-server-on-cloudflare</code>, <code>sandbox-sdk</code>, <code>web-perf</code></li>\n<li><code>cloudflare</code> (druga wersja skilla z paczki Cloudflare plugin)</li>\n</ul>\n<h2>Product / discovery</h2>\n<ul>\n<li><code>business-analyst</code>, <code>prd</code>, <code>find-skills</code></li>\n</ul>\n<h2>Cursor workflow / maintenance</h2>\n<ul>\n<li><code>babysit</code>, <code>create-rule</code>, <code>create-skill</code>, <code>statusline</code>, <code>update-cli-config</code>, <code>update-cursor-settings</code></li>\n</ul>\n<h2>CI, review i operacje repo</h2>\n<ul>\n<li><code>check-compiler-errors</code>, <code>deslop</code>, <code>fix-ci</code>, <code>fix-merge-conflicts</code>, <code>get-pr-comments</code>, <code>loop-on-ci</code>, <code>new-branch-and-pr</code>, <code>review-and-ship</code>, <code>run-smoke-tests</code>, <code>weekly-review</code>, <code>what-did-i-get-done</code></li>\n</ul>\n<p>To jest „toolbox” fabryki: zamiast robić wszystko jednym agentem, dobierasz <strong>właściwy skill do konkretnej roboty</strong>.</p>\n",
           "layout": "no-image",
@@ -116,15 +255,15 @@
       ]
     },
     {
-      "order": 4,
+      "order": 5,
       "slug": "subagents",
-      "title": "4. Sub-agenci",
+      "title": "5. Sub-agenci",
       "slides": [
         {
-          "id": "04-subagents/04a-agents-md-overview",
-          "stepOrder": 4,
+          "id": "05-subagents/05a-agents-md-overview",
+          "stepOrder": 5,
           "stepSlug": "subagents",
-          "slideOrder": "04a",
+          "slideOrder": "05a",
           "title": "Jak działa system agentów w onTatami",
           "bodyHtml": "<h1>Jak działa system agentów w onTatami</h1>\n<p>Ten model pracy jest opisany w <code>AGENTS.md</code> i opiera się na zasadzie:\n<strong>główny wątek = manager</strong>, a wykonanie idzie przez wyspecjalizowanych agentów.</p>\n<h2>Co jest kluczowe</h2>\n<ul>\n<li>Manager najpierw planuje i deleguje, nie robi wszystkiego sam.</li>\n<li>Praca idzie iteracyjnie: architektura -&gt; implementacja -&gt; testy -&gt; review.</li>\n<li>Każdy agent ma jasny zakres i granice odpowiedzialności.</li>\n<li>Trzymamy granice warstw (<code>apps/web</code>, <code>apps/api</code>, DB, realtime).</li>\n<li>Każde zadanie domykamy testami i synchronizacją dokumentów (<code>PLAN.md</code>, <code>RECENT_CHANGES.md</code>, <code>ai/CONTEXT.md</code>).</li>\n</ul>\n<h2>Domyślny przepływ</h2>\n<ol>\n<li><code>architect</code></li>\n<li>specjalista domenowy (<code>frontend-specialist</code> / <code>api-specialist</code> / <code>database-specialist</code> / <code>engineer</code>)</li>\n<li><code>test-specialist</code></li>\n<li><code>reviewer</code></li>\n</ol>\n",
           "layout": "no-image",
@@ -133,10 +272,10 @@
           "demoModal": null
         },
         {
-          "id": "04-subagents/04b-architect",
-          "stepOrder": 4,
+          "id": "05-subagents/05b-architect",
+          "stepOrder": 5,
           "stepSlug": "subagents",
-          "slideOrder": "04b",
+          "slideOrder": "05b",
           "title": "Agent: `architect`",
           "bodyHtml": "<h1>Agent: <code>architect</code></h1>\n<p>Domyślny agent startowy. Układa rozwiązanie tak, żeby było <strong>proste, wdrażalne i testowalne</strong>.</p>\n<h2>Rola</h2>\n<ul>\n<li>Rozbija zadanie na małe kroki.</li>\n<li>Ustala kontrakty danych/API.</li>\n<li>Pilnuje granic warstw i miejsca zmian w repo.</li>\n<li>Deleguje pracę do pozostałych agentów.</li>\n</ul>\n<h2>Efekt dla zespołu</h2>\n<p>Mniej chaosu i mniej konfliktów — najpierw decyzje architektoniczne, potem kod.</p>\n",
           "layout": "no-image",
@@ -145,10 +284,10 @@
           "demoModal": null
         },
         {
-          "id": "04-subagents/04c-frontend-specialist",
-          "stepOrder": 4,
+          "id": "05-subagents/05c-frontend-specialist",
+          "stepOrder": 5,
           "stepSlug": "subagents",
-          "slideOrder": "04c",
+          "slideOrder": "05c",
           "title": "Agent: `frontend-specialist`",
           "bodyHtml": "<h1>Agent: <code>frontend-specialist</code></h1>\n<p>Specjalista od <code>apps/web</code> (React Router + React 19 + Tailwind/shadcn).</p>\n<h2>Rola</h2>\n<ul>\n<li>Pracuje na trasach, loader/action i komponentach UI.</li>\n<li>Integruje widoki z API i stanami (loading/error/empty).</li>\n<li>Dba o SSR-safe patterns i testy UI.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie rozwiązuje backendowej autoryzacji ani warstwy DB po stronie UI.</p>\n",
           "layout": "no-image",
@@ -157,10 +296,10 @@
           "demoModal": null
         },
         {
-          "id": "04-subagents/04d-api-specialist",
-          "stepOrder": 4,
+          "id": "05-subagents/05d-api-specialist",
+          "stepOrder": 5,
           "stepSlug": "subagents",
-          "slideOrder": "04d",
+          "slideOrder": "05d",
           "title": "Agent: `api-specialist`",
           "bodyHtml": "<h1>Agent: <code>api-specialist</code></h1>\n<p>Specjalista od <code>apps/api</code> (Cloudflare Workers + Hono + Zod).</p>\n<h2>Rola</h2>\n<ul>\n<li>Tworzy i utrzymuje endpointy HTTP.</li>\n<li>Waliduje input/output i pilnuje spójnych błędów.</li>\n<li>Dba o RBAC, security headers, CORS i testy API.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie implementuje UI; migracje DB robi we współpracy z <code>database-specialist</code>.</p>\n",
           "layout": "no-image",
@@ -169,10 +308,10 @@
           "demoModal": null
         },
         {
-          "id": "04-subagents/04e-database-specialist",
-          "stepOrder": 4,
+          "id": "05-subagents/05e-database-specialist",
+          "stepOrder": 5,
           "stepSlug": "subagents",
-          "slideOrder": "04e",
+          "slideOrder": "05e",
           "title": "Agent: `database-specialist`",
           "bodyHtml": "<h1>Agent: <code>database-specialist</code></h1>\n<p>Specjalista od D1/SQLite + Drizzle w <code>apps/api</code>.</p>\n<h2>Rola</h2>\n<ul>\n<li>Projektuje schema i migracje.</li>\n<li>Przegląda zapytania pod poprawność i koszt.</li>\n<li>Pilnuje integralności danych i kompatybilności kontraktów.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie wdraża UI i nie zmienia kontraktów API bez synchronizacji z <code>api-specialist</code>.</p>\n",
           "layout": "no-image",
@@ -181,10 +320,10 @@
           "demoModal": null
         },
         {
-          "id": "04-subagents/04f-engineer",
-          "stepOrder": 4,
+          "id": "05-subagents/05f-engineer",
+          "stepOrder": 5,
           "stepSlug": "subagents",
-          "slideOrder": "04f",
+          "slideOrder": "05f",
           "title": "Agent: `engineer`",
           "bodyHtml": "<h1>Agent: <code>engineer</code></h1>\n<p>Agent &quot;dowozowy&quot;: małe, poprawne zmiany produkcyjne domknięte testami.</p>\n<h2>Rola</h2>\n<ul>\n<li>Implementuje kod zgodnie z planem.</li>\n<li>Trzyma standardy TypeScript strict i walidację wejść.</li>\n<li>Dodaje testy regresyjne przy fixach.</li>\n<li>Uruchamia typecheck/testy dla dotkniętych modułów.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie omija testów, review ani zasad bezpieczeństwa.</p>\n",
           "layout": "no-image",
@@ -193,10 +332,10 @@
           "demoModal": null
         },
         {
-          "id": "04-subagents/04g-test-specialist",
-          "stepOrder": 4,
+          "id": "05-subagents/05g-test-specialist",
+          "stepOrder": 5,
           "stepSlug": "subagents",
-          "slideOrder": "04g",
+          "slideOrder": "05g",
           "title": "Agent: `test-specialist`",
           "bodyHtml": "<h1>Agent: <code>test-specialist</code></h1>\n<p>Specjalista od jakości: Vitest + Testing Library + testy Workers/API.</p>\n<h2>Rola</h2>\n<ul>\n<li>Projektuje minimalny, skuteczny zakres testów.</li>\n<li>Tworzy testy do nowych funkcji i napraw.</li>\n<li>Dodaje regresje na przypadki brzegowe.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie zmienia logiki produkcyjnej, jeśli nie jest to konieczne do testowania.</p>\n",
           "layout": "no-image",
@@ -205,10 +344,10 @@
           "demoModal": null
         },
         {
-          "id": "04-subagents/04h-reviewer",
-          "stepOrder": 4,
+          "id": "05-subagents/05h-reviewer",
+          "stepOrder": 5,
           "stepSlug": "subagents",
-          "slideOrder": "04h",
+          "slideOrder": "05h",
           "title": "Agent: `reviewer`",
           "bodyHtml": "<h1>Agent: <code>reviewer</code></h1>\n<p>Końcowy filtr jakości: poprawność, bezpieczeństwo i ryzyko regresji.</p>\n<h2>Rola</h2>\n<ul>\n<li>Wykrywa bugi, luki RBAC i niespójności walidacji.</li>\n<li>Sprawdza zgodność z wymaganiami i granicami warstw.</li>\n<li>Ocenia, czy testy pokrywają ryzykowne miejsca.</li>\n</ul>\n<h2>Granica</h2>\n<p>Nie blokuje zmian przez kosmetykę i nie przepisuje kodu &quot;dla stylu&quot;.</p>\n",
           "layout": "no-image",
@@ -219,15 +358,15 @@
       ]
     },
     {
-      "order": 5,
+      "order": 6,
       "slug": "cicd",
-      "title": "5. CI/CD i supply chain",
+      "title": "6. CI/CD i supply chain",
       "slides": [
         {
-          "id": "05-cicd/05a-github-cloudflare",
-          "stepOrder": 5,
+          "id": "06-cicd/06a-github-cloudflare",
+          "stepOrder": 6,
           "stepSlug": "cicd",
-          "slideOrder": "05a",
+          "slideOrder": "06a",
           "title": "GitHub + Cloudflare",
           "bodyHtml": "<h1>GitHub + Cloudflare</h1>\n<ul>\n<li><strong>Repo</strong> na GitHubie jako source of truth.</li>\n<li><strong>Cloudflare Pages</strong> (frontend) i/lub <strong>Workers</strong> (API) podpięte pod pipeline z GitHub Actions lub natywne integracje CF.</li>\n<li><strong>Preview deployments</strong> z PR — szybka pętla feedbacku („czy to w ogóle działa na edge?”).</li>\n</ul>\n<h2>Dla solo-deva</h2>\n<p>To jest Twój <strong>„release train”</strong>: jeśli main jest zielony i artefakt się buduje, masz psychologiczne pozwolenie na merge.</p>\n",
           "layout": "no-image",
@@ -236,10 +375,10 @@
           "demoModal": null
         },
         {
-          "id": "05-cicd/05b-dependabot-socket",
-          "stepOrder": 5,
+          "id": "06-cicd/06b-dependabot-socket",
+          "stepOrder": 6,
           "stepSlug": "cicd",
-          "slideOrder": "05b",
+          "slideOrder": "06b",
           "title": "Dependabot + Socket (security)",
           "bodyHtml": "<h1>Dependabot + Socket (security)</h1>\n<ul>\n<li><strong>Dependabot</strong> — rutynowe PR-y z aktualizacjami zależności; mniejsza powierzchnia „zapomnianych” CVE.</li>\n<li><strong>Socket</strong> — analiza ryzyk w package ecosystem (np. podejrzane skrypty post-install, supply-chain surprises).</li>\n</ul>\n<h2>Co jeszcze robi <code>security.yml</code></h2>\n<ul>\n<li>Odpala się na: <strong>PR</strong>, <strong>push do <code>main</code></strong>, <strong>schedule</strong> (co tydzień), oraz ręcznie (<code>workflow_dispatch</code>).</li>\n<li><strong>Gitleaks</strong>: skan sekretów w working tree (<code>--no-git</code>, redakcja wrażliwych fragmentów).</li>\n<li><strong>Trivy</strong>:<ul>\n<li>na PR: szybki skan <code>apps/</code> pod <strong>misconfig</strong> (HIGH/CRITICAL),</li>\n<li>poza PR: pełny skan repo (<code>vuln + misconfig + secret</code>).</li>\n</ul>\n</li>\n<li><strong>Dependencies (<code>npm audit</code>)</strong> dla <code>apps/web</code> i <code>apps/api</code>:<ul>\n<li>na PR pomijane (żeby nie dublować sygnału z Socket),</li>\n<li>na <code>main/schedule</code>: <code>npm audit --audit-level=high</code>.</li>\n</ul>\n</li>\n<li><strong>OSSF Scorecard</strong> na harmonogramie/manualu (publikacja SARIF do security tab) — w praktyce to lekki, automatyczny zamiennik pod „enterprise audit mindset” (np. SOCA), bo pełnego audytu solowo raczej nie dowieziemy.</li>\n</ul>\n<h2>Czemu to ważne w fabryce</h2>\n<p>Ty nie skanujesz każdego <code>node_modules</code> ręcznie. <strong>Automatyzujesz ostrzeżenia</strong>, a potem <strong>decyzje</strong> podejmujesz świadomie.</p>\n",
           "layout": "no-image",
@@ -250,15 +389,15 @@
       ]
     },
     {
-      "order": 6,
+      "order": 7,
       "slug": "async-jules",
-      "title": "6. Agenci asynchroniczni — Jules",
+      "title": "7. Agenci asynchroniczni — Jules",
       "slides": [
         {
-          "id": "06-async-jules/06a-security",
-          "stepOrder": 6,
+          "id": "07-async-jules/07a-security",
+          "stepOrder": 7,
           "stepSlug": "async-jules",
-          "slideOrder": "06a",
+          "slideOrder": "07a",
           "title": "Jules — super opcja pod security",
           "bodyHtml": "<h1>Jules — super opcja pod security</h1>\n<p>Agent asynchroniczny może <strong>przemielić repo</strong> w tle: szuka typowych dziur konfiguracyjnych, wycieków sekretów w historii, podejrzanych wzorców w CI.</p>\n<h2>Jak z tego korzystać rozsądnie</h2>\n<ul>\n<li>Nie traktuj wyniku jak audytu Big4 — traktuj jak <strong>triage</strong>: co warto kliknąć w pierwszej kolejności.</li>\n<li><strong>Łącz</strong> z reviewem człowieka przy zmianach w auth, RBAC, boundary z public internetem.</li>\n</ul>\n<h2>Mój spoiler</h2>\n<p>Security „z automatu” ratuje głupie błędy. <strong>Nie ratuje</strong> złych założeń architektury — tu nadal musisz myśleć.</p>\n",
           "layout": "no-image",
@@ -267,10 +406,10 @@
           "demoModal": null
         },
         {
-          "id": "06-async-jules/06b-performance",
-          "stepOrder": 6,
+          "id": "07-async-jules/07b-performance",
+          "stepOrder": 7,
           "stepSlug": "async-jules",
-          "slideOrder": "06b",
+          "slideOrder": "07b",
           "title": "Jules — sugestie performance",
           "bodyHtml": "<h1>Jules — sugestie performance</h1>\n<p>Asynchroniczny agent potrafi zaproponować <strong>profilowanie</strong> i checklistę: bundle size, waterfall zasobów, cache headers, niepotrzebne refetch-e, kosztowne rendery.</p>\n<h2>Co jest wartościowe</h2>\n<ul>\n<li>Lista <strong>„sprawdź najpierw”</strong> — zamiast ogólnego „zoptymalizuj aplikację”.</li>\n<li>Powiązanie z <strong>metrykami</strong> (np. LCP, TBT), jeśli podasz mu kontekst stacku.</li>\n</ul>\n<h2>Uczciwie</h2>\n<p>Część sugestii będzie <strong>generyczna</strong>. Odrzucasz, gdy nie pasuje do realnego profilu ruchu (SSR vs SPA, edge vs origin).</p>\n",
           "layout": "no-image",
@@ -281,15 +420,15 @@
       ]
     },
     {
-      "order": 7,
+      "order": 8,
       "slug": "fails",
-      "title": "7. Faile po drodze",
+      "title": "8. Faile po drodze",
       "slides": [
         {
-          "id": "07-fails/07a-fails",
-          "stepOrder": 7,
+          "id": "08-fails/08a-fails",
+          "stepOrder": 8,
           "stepSlug": "fails",
-          "slideOrder": "07a",
+          "slideOrder": "08a",
           "title": "Faile, które mnie nauczyły najwięcej",
           "bodyHtml": "<h1>Faile, które mnie nauczyły najwięcej</h1>\n<div class=\"fails-grid\" aria-label=\"Lista faili projektu\">\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Antigravity i liczenie tokenów</h3>\n    <p class=\"fail-card__text\">Za dużo wiary, że \"samo się policzy\". Efekt: złe estymacje kosztu i zbyt późna reakcja.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Claude + OpenRouter + modele spoza Anthropic</h3>\n    <p class=\"fail-card__text\">Mieszanie providerów i modeli bez twardych zasad zrobiło niespójne wyniki i trudniejszy debugging.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Jeden wielki `http.api`</h3>\n    <p class=\"fail-card__text\">Przeładowanie kontekstu i nieustające konflikty. Duży plik zabija równoległą pracę agentów.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Cursor nie odpala subagentów mimo definicji w `AGENTS.md`</h3>\n    <p class=\"fail-card__text\">Sama definicja agentów nie gwarantuje działania orkiestracji. Trzeba testować realny execution path, a nie tylko konfigurację.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">UX nieprzygotowany na starcie</h3>\n    <p class=\"fail-card__text\">Nie zaplanowałem UX wcześniej i do dziś spłacam ten dług: bałagan z początku wraca w kolejnych iteracjach.</p>\n  </article>\n\n  <article class=\"fail-card fail-card--positive\">\n    <h3 class=\"fail-card__title\">Testów sam nie weryfikowałem</h3>\n    <p class=\"fail-card__text\">Nigdy tam realnie nie zajrzałem, ale wielokrotnie to właśnie testy powstrzymały release i uratowały mnie przed produkcyjną wtopą.</p>\n  </article>\n\n  <article class=\"fail-card\">\n    <h3 class=\"fail-card__title\">Drag &amp; drop wygenerował tysiące requestów</h3>\n    <p class=\"fail-card__text\">Przy implementacji drag and drop ruch API wystrzelił i szybko wysycił plan darmowy na Workers. Wniosek: throttling/batching i limity trzeba projektować od razu.</p>\n  </article>\n\n</div>",
           "layout": "no-image",
@@ -300,15 +439,15 @@
       ]
     },
     {
-      "order": 8,
+      "order": 9,
       "slug": "gaps",
-      "title": "8. Czego jeszcze brakuje",
+      "title": "9. Czego jeszcze brakuje",
       "slides": [
         {
-          "id": "08-gaps/08a-what-is-missing",
-          "stepOrder": 8,
+          "id": "09-gaps/09a-what-is-missing",
+          "stepOrder": 9,
           "stepSlug": "gaps",
-          "slideOrder": "08a",
+          "slideOrder": "09a",
           "title": "Czego jeszcze brakuje",
           "bodyHtml": "<h1>Czego jeszcze brakuje</h1>\n<div class=\"gaps-grid\" aria-label=\"Otwarte tematy\">\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">Marketing</h3>\n    <p class=\"gap-card__text\">Muszę jeszcze rozkminić strategię dotarcia: komunikat, kanały i powtarzalny lejek.</p>\n  </article>\n\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">Legal</h3>\n    <p class=\"gap-card__text\">Muszę jeszcze domknąć tematy formalne: regulaminy, odpowiedzialność, dane i compliance.</p>\n  </article>\n\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">Ogarnięcie procesu (rules vs hooki)</h3>\n    <p class=\"gap-card__text\">Chcę przenieść część logiki z rules (np. generowanie kontekstu) do hooków, żeby workflow był bardziej deterministyczny.</p>\n  </article>\n\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">Nowe narzędzia i modele</h3>\n    <p class=\"gap-card__text\">Chcę jeszcze sprawdzić <strong>opencode</strong> oraz użycie modeli typu <strong>Kimi</strong> i <strong>MiniMax</strong>.</p>\n  </article>\n\n  <article class=\"gap-card\">\n    <h3 class=\"gap-card__title\">PRD + DeepResearch + konkurencja</h3>\n    <p class=\"gap-card__text\">Chcę przerzucić dokument PRD przez <strong>DeepResearch</strong> i porównać możliwości oraz funkcje konkurencyjnych produktów.</p>\n  </article>\n</div>",
           "layout": "no-image",
